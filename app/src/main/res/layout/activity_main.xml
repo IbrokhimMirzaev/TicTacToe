@@ -37,21 +37,11 @@
 
         <LinearLayout style="@style/row">
 
-            <Button
-                android:id="@+id/a1"
-                style="@style/column" />
-
+            <ImageButton android:id="@+id/a1" android:tag="0" style="@style/column" />
             <View style="@style/verticalLine" />
-
-            <Button
-                android:id="@+id/a2"
-                style="@style/column" />
-
+            <ImageButton android:id="@+id/a2" android:tag="1" style="@style/column" />
             <View style="@style/verticalLine" />
-
-            <Button
-                android:id="@+id/a3"
-                style="@style/column" />
+            <ImageButton android:id="@+id/a3" android:tag="2" style="@style/column" />
 
         </LinearLayout>
 
@@ -59,21 +49,11 @@
 
         <LinearLayout style="@style/row">
 
-            <Button
-                android:id="@+id/b1"
-                style="@style/column" />
-
+            <ImageButton android:id="@+id/b1" android:tag="3" style="@style/column" />
             <View style="@style/verticalLine" />
-
-            <Button
-                android:id="@+id/b2"
-                style="@style/column" />
-
+            <ImageButton android:id="@+id/b2" android:tag="4" style="@style/column" />
             <View style="@style/verticalLine" />
-
-            <Button
-                android:id="@+id/b3"
-                style="@style/column" />
+            <ImageButton android:id="@+id/b3" android:tag="5" style="@style/column" />
 
         </LinearLayout>
 
@@ -81,21 +61,11 @@
 
         <LinearLayout style="@style/row">
 
-            <Button
-                android:id="@+id/c1"
-                style="@style/column" />
-
+            <ImageButton android:id="@+id/c1" android:tag="6" style="@style/column" />
             <View style="@style/verticalLine" />
-
-            <Button
-                android:id="@+id/c2"
-                style="@style/column" />
-
+            <ImageButton android:id="@+id/c2" android:tag="7" style="@style/column" />
             <View style="@style/verticalLine" />
-
-            <Button
-                android:id="@+id/c3"
-                style="@style/column" />
+            <ImageButton android:id="@+id/c3" android:tag="8" style="@style/column" />
 
         </LinearLayout>
 
