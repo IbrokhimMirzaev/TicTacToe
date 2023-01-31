@@ -39,14 +39,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 img.setImageResource(R.drawable.x_sign)
                 active = false
                 matrix[col][row] = 1
-                active_player.text = "Player O"
                 isWinner(1)
+                active_player.text = "Player O"
             } else {
                 img.setImageResource(R.drawable.o_sign)
                 active = true
                 matrix[col][row] = 0
-                active_player.text = "Player X"
                 isWinner(0)
+                active_player.text = "Player X"
             }
         }
 
@@ -73,6 +73,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // 0 x 0
         // x 0 0
         fromRightTopToBottomCheck(a)
+        count = 0
     }
 
     private fun horizontalCheck(a: Int) {
@@ -82,11 +83,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     count++
                 }
             }
-            if (count == 3) {
-                winner.text = "Winner is $a"
-                finishGame()
-                return
-            }
+            showWinnerName(a)
             count = 0
         }
     }
@@ -98,11 +95,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     count++
                 }
             }
-            if (count == 3) {
-                winner.text = "Winner is $a"
-                finishGame()
-                return
-            }
+            showWinnerName(a)
             count = 0
         }
     }
@@ -117,11 +110,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         }
-        if (count == 3) {
-            winner.text = "Winner is $a"
-            finishGame()
-            return
-        }
+        showWinnerName(a)
     }
 
     private fun fromRightTopToBottomCheck(a: Int) {
@@ -134,11 +123,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         }
-        if (count == 3) {
-            winner.text = "Winner is $a"
-            finishGame()
-            return
-        }
+        showWinnerName(a)
     }
 
     private fun finishGame() {
@@ -182,5 +167,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         img6.setImageDrawable(null)
         img7.setImageDrawable(null)
         img8.setImageDrawable(null)
+    }
+
+    private fun showWinnerName(a: Int) {
+        var winnerName = ""
+        winnerName = if (a == 0) "Player O" else "Player X"
+        if (count == 3) {
+            winner.text = "Winner is $winnerName"
+            finishGame()
+            return
+        }
     }
 }
