@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'khamroev001.tictactoe'
+    namespace 'ibrokhim_uz.tictactoe'
     compileSdk 33
 
     defaultConfig {
-        applicationId "khamroev001.tictactoe"
+        applicationId "ibrokhim_uz.tictactoe"
         minSdk 21
         targetSdk 33
         versionCode 1

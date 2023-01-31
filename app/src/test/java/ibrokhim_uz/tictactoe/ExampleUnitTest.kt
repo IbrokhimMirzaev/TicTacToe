@@ -1,4 +1,4 @@
-package khamroev001.tictactoe
+package ibrokhim_uz.tictactoe
 
 import org.junit.Test
 
