@@ -9,10 +9,17 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     var matrix = Array(3) { IntArray(3) { -1 } }
     var active = true
+    private var xName = ""
+    private var nameO = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        active_player.text = "Player X"
+
+        xName = intent.getStringExtra("playerX").toString()
+        nameO = intent.getStringExtra("player0").toString()
+
+        active_player.text = xName
 
         img0.setOnClickListener(this)
         img1.setOnClickListener(this)
@@ -29,6 +36,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    var k = 0
     override fun onClick(p0: View?) {
         val img = findViewById<ImageButton>(p0!!.id)
         val t = img.tag.toString().toInt()
@@ -40,17 +48,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 active = false
                 matrix[col][row] = 1
                 isWinner(1)
-                active_player.text = "Player O"
+                active_player.text = nameO
+                k++
             } else {
                 img.setImageResource(R.drawable.o_sign)
                 active = true
                 matrix[col][row] = 0
                 isWinner(0)
-                active_player.text = "Player X"
+                active_player.text = xName
+                k++
             }
         }
 
-
+        if (k == 9) {
+            winner.text = "Draw"
+            finishGame()
+        }
     }
 
     var count = 0
@@ -74,6 +87,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // x 0 0
         fromRightTopToBottomCheck(a)
         count = 0
+
     }
 
     private fun horizontalCheck(a: Int) {
@@ -137,12 +151,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         img7.isEnabled = false
         img8.isEnabled = false
         restart.visibility = View.VISIBLE
+        k = 0
     }
 
     private fun restart() {
         matrix = Array(3) { IntArray(3) { -1 } }
         active = true
-        active_player.text = "Player X"
+        active_player.text = xName
 
         restart.visibility = View.INVISIBLE
 
@@ -167,11 +182,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         img6.setImageDrawable(null)
         img7.setImageDrawable(null)
         img8.setImageDrawable(null)
+
+        k = 0
     }
 
     private fun showWinnerName(a: Int) {
         var winnerName = ""
-        winnerName = if (a == 0) "Player O" else "Player X"
+        winnerName = if (a == 0) nameO else xName
+
         if (count == 3) {
             winner.text = "Winner is $winnerName"
             finishGame()

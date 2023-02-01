@@ -2,16 +2,20 @@ package ibrokhim_uz.tictactoe
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.splash_screen.*
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.splash_screen)
+        setContentView(R.layout.splash_layout)
 
-        playBtn.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
-        }
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, PlayActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, 2000)
+
     }
 }

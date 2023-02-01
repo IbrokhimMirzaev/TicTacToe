@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToe">
         <activity android:name=".MainActivity"/>
+        <activity android:name=".PlayActivity"/>
+        <activity android:name=".PlayerNicks"/>
         <activity
             android:name=".SplashActivity"
             android:exported="true">
