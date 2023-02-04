@@ -9,26 +9,24 @@
 
     <ImageView
         android:id="@+id/xBtn"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="55dp"
         android:background="@drawable/circle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
         android:id="@+id/xBtn1"
-        android:layout_width="130dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/x_sign"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/xxx"
+        app:layout_constraintBottom_toBottomOf="@id/xBtn"
         app:layout_constraintEnd_toEndOf="@id/xBtn"
         app:layout_constraintStart_toStartOf="@id/xBtn"
         app:layout_constraintTop_toTopOf="@id/xBtn"
-        app:layout_constraintBottom_toBottomOf="@id/xBtn"
         tools:layout_editor_absoluteY="55dp" />
 
 
@@ -38,19 +36,23 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/button"
+        android:inputType="textPersonName"
+        android:keyboardNavigationCluster="true"
+        android:paddingVertical="20dp"
+        android:background="@drawable/corner"
         android:hint="Enter your name"
+        android:paddingStart="40dp"
         android:textColor="@color/black"
-        android:paddingLeft="40dp"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/xBtn" />
+        app:layout_constraintTop_toBottomOf="@id/xBtn"
+        tools:ignore="RtlSymmetry" />
 
     <ImageView
         android:id="@+id/oBtn"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="100dp"
         android:background="@drawable/circle"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,31 +62,31 @@
 
     <ImageView
         android:id="@+id/oBtn1"
-        android:layout_width="130dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/o_sign"
-        android:layout_marginRight="12dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/ooo"
+        app:layout_constraintBottom_toBottomOf="@id/oBtn"
         app:layout_constraintEnd_toEndOf="@id/oBtn"
         app:layout_constraintStart_toStartOf="@id/oBtn"
-        app:layout_constraintTop_toTopOf="@id/oBtn"
-        app:layout_constraintBottom_toBottomOf="@id/oBtn"
-        tools:layout_editor_absoluteY="55dp" />
+        app:layout_constraintTop_toTopOf="@id/oBtn" />
 
     <EditText
         android:id="@+id/edit2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/button"
+        android:inputType="textPersonName"
+        android:paddingVertical="20dp"
+        android:background="@drawable/corner"
         android:hint="Enter your name"
-        android:paddingLeft="40dp"
+        android:paddingStart="40dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/oBtn" />
+        app:layout_constraintTop_toBottomOf="@id/oBtn"
+        tools:ignore="RtlSymmetry"/>
 
     <ImageView
         android:id="@+id/next"

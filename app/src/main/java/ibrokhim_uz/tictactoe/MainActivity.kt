@@ -1,23 +1,38 @@
 package ibrokhim_uz.tictactoe
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    var matrix = Array(3) { IntArray(3) { -1 } }
+    private var matrix = Array(3) { IntArray(3) { -1 } }
     var active = true
     private var xName = ""
     private var nameO = ""
+
+    var mediaPlayer: MediaPlayer? = null
+    private lateinit var animSet: Animation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.music)
+        mediaPlayer?.isLooping = true
+        mediaPlayer?.start()
+
         xName = intent.getStringExtra("playerX").toString()
         nameO = intent.getStringExtra("player0").toString()
+
+        animSet = AnimationUtils.loadAnimation(this, R.anim.anim_set)
+
+        player1.text = xName
+        player2.text = nameO
 
         active_player.text = xName
 
@@ -151,6 +166,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         img7.isEnabled = false
         img8.isEnabled = false
         restart.visibility = View.VISIBLE
+        restart.startAnimation(animSet)
         k = 0
     }
 
@@ -192,6 +208,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         if (count == 3) {
             winner.text = "Winner is $winnerName"
+            if (a == 1) {
+                player1_score.text = (player1_score.text.toString().toInt() + 1).toString()
+            } else {
+                player2_score.text = (player2_score.text.toString().toInt() + 1).toString()
+            }
             finishGame()
             return
         }
