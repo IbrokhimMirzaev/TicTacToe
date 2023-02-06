@@ -2,6 +2,7 @@ package ibrokhim_uz.tictactoe
 
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -18,11 +19,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     var mediaPlayer: MediaPlayer? = null
     private lateinit var animSet: Animation
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        mediaPlayer?.stop()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.music)
+        mediaPlayer = MediaPlayer.create(this, R.raw.coconuts)
         mediaPlayer?.isLooping = true
         mediaPlayer?.start()
 
@@ -46,6 +53,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         img7.setOnClickListener(this)
         img8.setOnClickListener(this)
         restart.setOnClickListener {
+            MediaPlayer.create(this, R.raw.button).start()
             restart()
         }
 
@@ -53,6 +61,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     var k = 0
     override fun onClick(p0: View?) {
+        val mediaPlayer: MediaPlayer = MediaPlayer.create(this, R.raw.select)
+        mediaPlayer.start()
+        mediaPlayer.setVolume(100.0F, 100.0F)
         val img = findViewById<ImageButton>(p0!!.id)
         val t = img.tag.toString().toInt()
         val col: Int = t / 3
@@ -167,6 +178,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         img8.isEnabled = false
         restart.visibility = View.VISIBLE
         restart.startAnimation(animSet)
+        val mediaPlayer: MediaPlayer = MediaPlayer.create(this, R.raw.child)
+        mediaPlayer.start()
         k = 0
     }
 

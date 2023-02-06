@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/res/raw/air.mp3" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/raw/button.mp3" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/raw/child.mp3" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/raw/island.mp3" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/raw/play.mp3" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/raw/pop.mp3" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/raw/select.mp3" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/raw/tugadi.mp3" charset="ISO-8859-1" />
+  </component>
+</project>

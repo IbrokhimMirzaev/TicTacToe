@@ -5,4 +5,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="darkBlue">#007ADC</color>
+    <color name="hintColor">#CFCFCF</color>
 </resources>

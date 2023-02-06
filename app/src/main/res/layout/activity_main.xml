@@ -120,8 +120,8 @@
         android:adjustViewBounds="true"
         android:background="@drawable/circle"
         android:scaleType="centerCrop"
-        android:visibility="invisible"
         android:src="@drawable/restart"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -142,9 +142,10 @@
         android:id="@+id/active_player"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/pom_bold"
         android:text="Player X"
         android:textColor="#3cdceb"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -169,6 +170,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/pom_bold"
         android:text="Score"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -180,10 +182,10 @@
         android:id="@+id/score_layout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:paddingHorizontal="20dp"
         android:weightSum="100"
-        android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/score">
 
         <LinearLayout
@@ -198,6 +200,7 @@
                 android:id="@+id/player1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/pom_bold"
                 android:text="Harry"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
@@ -206,16 +209,18 @@
                 android:id="@+id/player1_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/pom_bold"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="35sp" />
         </LinearLayout>
 
         <View
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="18sp"
             android:layout_marginBottom="8dp"
-            android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:background="@color/white" />
 
@@ -231,6 +236,7 @@
                 android:id="@+id/player2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/pom_bold"
                 android:text="Silli"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
@@ -239,9 +245,11 @@
                 android:id="@+id/player2_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/pom_bold"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="35sp" />
 
         </LinearLayout>
 
